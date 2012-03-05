@@ -1,3 +1,3 @@
-module Espn
+module ESPN
   VERSION = "0.0.1"
 end
