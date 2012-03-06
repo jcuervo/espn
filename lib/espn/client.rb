@@ -1,8 +1,15 @@
 require "forwardable"
+require "faraday"
+require "faraday_middleware"
+require "espn/request"
+require "espn/sports"
 
 module ESPN
   class Client
     extend Forwardable
+
+    include Request
+    include Sports
 
     attr_accessor :api_key
 

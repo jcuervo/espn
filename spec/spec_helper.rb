@@ -21,6 +21,9 @@ VCR.configure do |c|
   c.hook_into :fakeweb
   c.configure_rspec_metadata!
   c.default_cassette_options = { :record => :new_episodes }
+  c.filter_sensitive_data('APIKEY') do |interaction|
+    interaction.request.uri = '?apikey='
+  end
 end
 
 RSpec.configure do |c|
